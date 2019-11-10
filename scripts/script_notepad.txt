@@ -1,0 +1,7 @@
+{"xAxis":760, "yAxis":629}
+{"xAxis":781, "yAxis":424}
+{"xAxis":62, "yAxis":636}
+{"xAxis":62, "yAxis":636}
+{"xAxis":70, "yAxis":632}
+{"xAxis":822, "yAxis":383}
+{"xAxis":475, "yAxis":47}
