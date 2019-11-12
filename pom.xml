@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>robot</groupId>
-	<artifactId>javarobot</artifactId>
+	<groupId>com.test</groupId>
+	<artifactId>any</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -38,6 +38,17 @@
 			<groupId>com.1stleg</groupId>
 			<artifactId>jnativehook</artifactId>
 			<version>2.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>3.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 	</dependencies>
 </project>
