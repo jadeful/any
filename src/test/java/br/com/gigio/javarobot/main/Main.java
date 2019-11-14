@@ -5,6 +5,8 @@ import com.sun.jna.Structure;
 import com.sun.jna.win32.StdCallLibrary;
 import org.apache.commons.lang.StringUtils;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,7 +14,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         Main m = new Main();
         final List<WindowInfo> inflList = new ArrayList<WindowInfo>();
         final List<Integer> order = new ArrayList<Integer>();
@@ -23,7 +25,7 @@ public class Main {
         }
 
         User32.instance.EnumWindows(new WndEnumProc() {
-            public boolean callback(int hWnd, int lParam) {
+            public boolean callback(int hWnd, int lParam) throws UnsupportedEncodingException {
                 if (User32.instance.IsWindowVisible(hWnd)) {
                     RECT r = new RECT();
                     User32.instance.GetWindowRect(hWnd, r);
@@ -46,12 +48,12 @@ public class Main {
         for (WindowInfo w : inflList) {
             String s = w.title;
 //            s= StringUtils.replace();
-            System.out.println(s);
+            System.out.println(w.toStringCode());
         }
     }
 
     public static interface WndEnumProc extends StdCallLibrary.StdCallCallback {
-        boolean callback(int hWnd, int lParam);
+        boolean callback(int hWnd, int lParam) throws UnsupportedEncodingException;
     }
 
     public static interface User32 extends StdCallLibrary {
@@ -78,6 +80,18 @@ public class Main {
             this.hwnd = hwnd;
             this.rect = rect;
             this.title = title;
+        }
+
+        public String toStringCode() throws UnsupportedEncodingException {
+            String s = this.title;
+            byte ptext[] = s.getBytes();
+            String value = new String(ptext, "GBK");
+            byte[] ptext2 = s.getBytes("GBK");
+            String value2 = new String(ptext2, "GBK");
+            return String.format("(%d,%d)-(%d,%d) : \"%s\"",
+                    rect.left, rect.top,
+                    rect.right, rect.bottom,
+                    title);
         }
 
         public String toString() {

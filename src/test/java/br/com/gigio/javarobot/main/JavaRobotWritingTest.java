@@ -32,12 +32,7 @@ public class JavaRobotWritingTest {
 			System.err.println(ex.getMessage());
 			System.exit(1);
 		}
-		
-		while(true){
-			
-		}
-		
-		
+
 	}
 
 }
