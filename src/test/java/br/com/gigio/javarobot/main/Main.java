@@ -24,6 +24,8 @@ public class Main {
             top = User32.instance.GetWindow(top, User32.GW_HWNDNEXT);
         }
 
+//        User32.instance.
+
         User32.instance.EnumWindows(new WndEnumProc() {
             public boolean callback(int hWnd, int lParam) throws UnsupportedEncodingException {
                 if (User32.instance.IsWindowVisible(hWnd)) {
