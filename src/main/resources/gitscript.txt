@@ -1,0 +1,65 @@
+  539  git status
+  540  git add pom.xml
+  541  git status
+  542  git commit
+  543  git log
+  544  git push
+  545  git status
+  546  git branch
+  547  git checkout master
+  548  git checkout -b test001
+  549  git status
+  550  git add pom.xml
+  551  git status
+  552  git commit -m '123'
+  553  git push -u origin test001
+  554  git checkout devv
+  555  git pull
+  556  git merge test001
+  557  git push -u origin devv
+  558  git checkout master
+  559  git checkout -b wang
+  560  git status
+  561  git add src/main/java/com/test/common/controller/ExamineController.java
+  562  git status
+  563  git commit -m 'fggjhbgj'
+  564  git checkout devv
+  565  git checkout wang
+  566  git log
+  567  git show
+  568  git show 9173cca27a0e9e8caa0607b0c0dc75be0899ebe3
+  569  git checkout devv
+  570  git sttus
+  571  git status
+  572  git add src/main/java/com/test/common/controller/ExamineController.java
+  573  git status
+  574  git commit -m '12321'
+  575  git stauts
+  576  git push -u origin devv
+  577  git checkout wang
+  578  git push -u origin  wang
+  579  git checkout devv
+  580  git pull 
+  581  git merge wang
+  582  git status
+  583  git add src/main/java/com/test/common/controller/ExamineController.java
+  584  git stauts
+  585  git commit -m 'dsfdasf'
+  586  git push 
+  587  git log
+  588  git log
+  589  git revert -m 1
+  590  git revert a6ea82a8e91673d02846d2c417251035a9f54897 -m 1
+  591  git revert -m 1 a6ea82a8e91673d02846d2c417251035a9f54897
+  592  git status
+  593  git log
+  594  git status
+  595  git diff src/main/java/com/test/common/controller/ExamineController.java
+  596  git reset HEAD src/main/java/com/test/common/controller/ExamineController.java
+  597  git status
+  598  git checkout -- src/main/java/com/test/common/controller/ExamineController.java
+  599  git status
+  600  git log
+  601  git revert -m 1 a6ea82a8e91673d02846d2c417251035a9f54897
+  602  git log
+  603  git push
