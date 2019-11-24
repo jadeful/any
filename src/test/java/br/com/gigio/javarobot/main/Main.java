@@ -5,6 +5,7 @@ import com.sun.jna.Structure;
 import com.sun.jna.win32.StdCallLibrary;
 import org.apache.commons.lang.StringUtils;
 
+import java.awt.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -19,13 +20,25 @@ public class Main {
         final List<WindowInfo> inflList = new ArrayList<WindowInfo>();
         final List<Integer> order = new ArrayList<Integer>();
         int top = User32.instance.GetTopWindow(0);
+//        User32.instance.GetWindowRect();
         while (top != 0) {
             order.add(top);
             top = User32.instance.GetWindow(top, User32.GW_HWNDNEXT);
         }
-
+        final User32 instanceTemp = (User32) Native.loadLibrary ("user32", User32.class);
+//        instanceTemp.GetWindow();
 //        User32.instance.
-
+        String osName = System.getProperty("os.name");
+//        KeyboardFocusManager
+        Window win = javax.swing.FocusManager.getCurrentManager().getFocusedWindow();
+        Window win2 = javax.swing.FocusManager.getCurrentKeyboardFocusManager().getActiveWindow();
+        Window win3 = javax.swing.FocusManager.getCurrentKeyboardFocusManager().getFocusedWindow();
+        Window win4 = javax.swing.FocusManager.getCurrentManager().getActiveWindow();
+        Container container = javax.swing.FocusManager.getCurrentKeyboardFocusManager().getCurrentFocusCycleRoot();
+        Window win5 = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getActiveWindow();
+        Window win6 = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusedWindow();
+//        javax.swing.FocusManager.getCurrentManager().getFocusedWindow();
+        Window[] ws = Window.getWindows();
         User32.instance.EnumWindows(new WndEnumProc() {
             public boolean callback(int hWnd, int lParam) throws UnsupportedEncodingException {
                 if (User32.instance.IsWindowVisible(hWnd)) {
