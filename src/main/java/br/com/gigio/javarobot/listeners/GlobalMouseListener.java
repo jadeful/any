@@ -9,6 +9,7 @@ import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 
+import com.sun.jna.platform.win32.User32;
 import com.sun.org.apache.bcel.internal.generic.StoreInstruction;
 import com.test.CaptureUtil;
 import com.test.StoreImageUtil;

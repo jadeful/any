@@ -4,6 +4,7 @@ import com.sun.jna.Native;
 import com.sun.jna.Structure;
 import com.sun.jna.win32.StdCallLibrary;
 import org.apache.commons.lang.StringUtils;
+import org.jnativehook.GlobalScreen;
 
 import java.awt.*;
 import java.io.UnsupportedEncodingException;
@@ -37,6 +38,7 @@ public class Main {
         Container container = javax.swing.FocusManager.getCurrentKeyboardFocusManager().getCurrentFocusCycleRoot();
         Window win5 = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getActiveWindow();
         Window win6 = java.awt.KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusedWindow();
+//        GlobalScreen.addNativeKeyListener();
 //        javax.swing.FocusManager.getCurrentManager().getFocusedWindow();
         Window[] ws = Window.getWindows();
         User32.instance.EnumWindows(new WndEnumProc() {
