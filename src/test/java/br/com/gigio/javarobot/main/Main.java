@@ -27,7 +27,7 @@ public class Main {
             top = User32.instance.GetWindow(top, User32.GW_HWNDNEXT);
         }
         final User32 instanceTemp = (User32) Native.loadLibrary ("user32", User32.class);
-//        instanceTemp.GetWindow();
+        int i = SystemColor.WINDOW_BORDER;
 //        User32.instance.
         String osName = System.getProperty("os.name");
 //        KeyboardFocusManager

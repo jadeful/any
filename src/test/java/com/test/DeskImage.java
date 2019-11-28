@@ -1,4 +1,4 @@
-package br.com.gigio.javarobot.main.com.test;
+package com.test;
 
 public class DeskImage {
 

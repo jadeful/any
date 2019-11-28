@@ -1,4 +1,4 @@
-package br.com.gigio.javarobot.main.com.test.program;
+package com.test.program;
 
 import java.awt.image.BufferedImage;
 
